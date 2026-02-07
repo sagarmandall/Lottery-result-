@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Lottery Result Today | Lottery Sambad | Nagaland Lottery PDF</title>
+<title>Lottery Result Today | Lottery Sambad | Nagaland Lottery</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Today Lottery Result PDF. Check Lottery Sambad Result, Nagaland Lottery Result and Dear Lottery Result PDF for 1 PM, 6 PM and 8 PM draws.">
+<meta name="description" content="Today Lottery Result image. Check Lottery Sambad and Nagaland Lottery result for 1 PM, 6 PM and 8 PM draws.">
 
 <meta name="keywords" content="lottery result, lottery sambad, nagaland lottery, dear lottery, lottery sambad nagaland">
 
@@ -17,12 +17,11 @@
 body{
   font-family: Arial, sans-serif;
   background:#f5f7fa;
-  color:#000;
   margin:0;
 }
 
 .container{
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   padding:15px;
   background:#ffffff;
@@ -31,14 +30,15 @@ body{
 h1{
   text-align:center;
   font-size:26px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 .date{
   text-align:center;
-  font-size:17px;
-  color:#444;
-  margin-bottom:18px;
+  font-size:19px;
+  font-weight:600;
+  color:#333;
+  margin:12px 0 18px;
 }
 
 .old-btn{
@@ -55,7 +55,6 @@ h1{
   color:#1a73e8;
   border:2px solid #1a73e8;
   border-radius:6px;
-  background:#ffffff;
 }
 
 .box{
@@ -73,19 +72,29 @@ h1{
   margin-bottom:10px;
 }
 
-.box a{
-  display:inline-block;
+.box button{
   padding:12px 22px;
   font-size:18px;
   font-weight:bold;
-  text-decoration:none;
-  color:#ffffff;
   background:#1a73e8;
+  color:#ffffff;
+  border:none;
   border-radius:6px;
+  cursor:pointer;
 }
 
-.box a:hover{
+.box button:hover{
   background:#0c5bd3;
+}
+
+.viewer{
+  display:none;
+  margin-top:15px;
+}
+
+.viewer img{
+  width:100%;
+  border:1px solid #ccc;
 }
 
 .ad{
@@ -97,6 +106,7 @@ h1{
   font-size:16px;
   line-height:1.7;
   color:#333;
+  margin-top:25px;
 }
 
 .footer{
@@ -119,57 +129,85 @@ h1{
 
 
 <!-- TOP AD -->
-<div class="ad">
-<!-- AdSense Code Here -->
+<div class="ad"><!-- AdSense Code Here --></div>
+
+<div class="box">
+  <strong>1 PM Lottery Result</strong>
+  <button onclick="showImage('img1','1pm.jpg')">View 1 PM Result</button>
+  <div class="viewer" id="img1"></div>
 </div>
 
 <div class="box">
-  <strong>1 PM Lottery Result PDF</strong>
-  <a href="1pm.pdf" target="_blank">View 1 PM Result PDF</a>
+  <strong>6 PM Lottery Result</strong>
+  <button onclick="showImage('img2','6pm.jpg')">View 6 PM Result</button>
+  <div class="viewer" id="img2"></div>
 </div>
 
 <div class="box">
-  <strong>6 PM Lottery Result PDF</strong>
-  <a href="6pm.pdf" target="_blank">View 6 PM Result PDF</a>
+  <strong>8 PM Lottery Result</strong>
+  <button onclick="showImage('img3','8pm.jpg')">View 8 PM Result</button>
+  <div class="viewer" id="img3"></div>
 </div>
 
-<div class="box">
-  <strong>8 PM Lottery Result PDF</strong>
-  <a href="8pm.pdf" target="_blank">View 8 PM Result PDF</a>
-</div>
-
-<!-- MIDDLE AD -->
-<div class="ad">
-<!-- AdSense Code Here -->
-</div>
 <div class="old-btn">
   <a href="old-result.html">View Old Lottery Results</a>
 </div>
+
+<!-- MIDDLE AD -->
+<div class="ad"><!-- AdSense Code Here --></div>
+
 <div class="content">
-<h2>Lottery Sambad & Nagaland Lottery Result</h2>
+
+<h2>Lottery Result & Lottery Sambad Today</h2>
 <p>
-This website provides today lottery result PDF for Lottery Sambad, Nagaland Lottery and Dear Lottery.
-All results are published here only for information purpose.
+This page provides the latest lottery result information for Lottery Sambad.
+Users can easily check today lottery sambad results for 1 PM, 6 PM and 8 PM draws.
+All lottery result images are published here only for information purpose.
 </p>
+
+<p>
+Lottery Sambad is one of the most searched lottery result terms in India.
+Visitors regularly search for today lottery result to verify winning numbers.
+Result images are displayed clearly so that users can check the lottery sambad result without confusion.
+</p>
+
+<h2>Nagaland Lottery Result Today</h2>
+<p>
+Nagaland Lottery is one of the most popular state lotteries in India.
+Every day, many users search online for Nagaland lottery result to check declared winning numbers.
+This page shows Nagaland lottery result images for reference purpose only.
+</p>
+
+<p>
+Nagaland lottery results are announced multiple times in a day.
+Users looking for Nagaland lottery sambad result can scroll above and view the latest result images.
+Always verify the final result from official Nagaland lottery sources.
+</p>
+
 </div>
 
 <div class="footer">
-<p>This is not an official lottery website.</p>
+This is not an official lottery website.
 </div>
 
 <!-- BOTTOM AD -->
-<div class="ad">
-<!-- AdSense Code Here -->
-</div>
+<div class="ad"><!-- AdSense Code Here --></div>
 
 </div>
 
-<!-- AUTO DATE SCRIPT -->
 <script>
-  const options = { day: 'numeric', month: 'long', year: 'numeric' };
-  const today = new Date().toLocaleDateString('en-IN', options);
-  document.getElementById("todayDate").innerText =
-    "Today Lottery Result PDF – " + today + " (1 PM • 6 PM • 8 PM)";
+function showImage(id, file){
+  document.querySelectorAll('.viewer').forEach(v => v.style.display = 'none');
+  const box = document.getElementById(id);
+  box.innerHTML = '<img src="'+file+'" alt="Lottery Result Image">';
+  box.style.display = 'block';
+}
+
+const options = { day:'numeric', month:'long', year:'numeric' };
+document.getElementById("todayDate").innerText =
+  "Today Lottery Result – " +
+  new Date().toLocaleDateString('en-IN', options) +
+  " (1 PM • 6 PM • 8 PM)";
 </script>
 
 </body>
