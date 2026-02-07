@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Old Lottery Result PDF | Lottery Sambad | Nagaland Lottery</title>
+<title>Old Lottery Result | Lottery Sambad | Nagaland Lottery</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Check old lottery result PDF. Download previous Lottery Sambad and Nagaland Lottery old result PDFs easily.">
+<meta name="description" content="Check old lottery result image. Previous day Lottery Sambad and Nagaland Lottery result.">
 
 <meta name="keywords" content="old lottery result, lottery sambad old result, nagaland lottery old result">
 
@@ -17,12 +17,11 @@
 body{
   font-family: Arial, sans-serif;
   background:#f5f7fa;
-  color:#000;
   margin:0;
 }
 
 .container{
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   padding:15px;
   background:#ffffff;
@@ -31,14 +30,15 @@ body{
 h1{
   text-align:center;
   font-size:26px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-.note{
+.date{
   text-align:center;
-  font-size:16px;
-  color:#444;
-  margin-bottom:20px;
+  font-size:18px;
+  font-weight:600;
+  color:#333;
+  margin:12px 0 20px;
 }
 
 .box{
@@ -46,6 +46,7 @@ h1{
   border-radius:8px;
   padding:15px;
   margin-bottom:15px;
+  text-align:center;
   background:#fafafa;
 }
 
@@ -55,32 +56,36 @@ h1{
   margin-bottom:10px;
 }
 
-.box a{
-  display:inline-block;
-  margin:6px 0;
-  padding:10px 18px;
-  font-size:16px;
+.box button{
+  padding:12px 22px;
+  font-size:18px;
   font-weight:bold;
-  text-decoration:none;
-  color:#ffffff;
   background:#1a73e8;
+  color:#ffffff;
+  border:none;
   border-radius:6px;
+  cursor:pointer;
 }
 
-.box a:hover{
+.box button:hover{
   background:#0c5bd3;
 }
 
-.ad{
-  text-align:center;
-  margin:22px 0;
+.viewer{
+  display:none;
+  margin-top:15px;
+}
+
+.viewer img{
+  width:100%;
+  border:1px solid #ccc;
 }
 
 .footer{
-  font-size:14px;
   text-align:center;
+  font-size:14px;
   color:#555;
-  margin-top:30px;
+  margin-top:25px;
 }
 </style>
 </head>
@@ -89,46 +94,51 @@ h1{
 
 <div class="container">
 
-<h1>Old Lottery Result PDF</h1>
+<h1>Old Lottery Result – Lottery Sambad Nagaland</h1>
 
-<div class="note">
-Previous Lottery Sambad & Nagaland Lottery Result PDFs
-</div>
+<div class="date" id="oldDate"></div>
 
-<!-- TOP AD -->
-<div class="ad">
-<!-- AdSense Code Here -->
+<div class="box">
+  <strong>1 PM Old Lottery Result</strong>
+  <button onclick="showImage('img1','old/1pm.jpg')">View 1 PM Result</button>
+  <div class="viewer" id="img1"></div>
 </div>
 
 <div class="box">
-<strong>Lottery Result – 01 February 2026</strong>
-<a href="old/2026-02-01-1pm.pdf" target="_blank">1 PM Result PDF</a>
-<a href="old/2026-02-01-6pm.pdf" target="_blank">6 PM Result PDF</a>
-<a href="old/2026-02-01-8pm.pdf" target="_blank">8 PM Result PDF</a>
+  <strong>6 PM Old Lottery Result</strong>
+  <button onclick="showImage('img2','old/6pm.jpg')">View 6 PM Result</button>
+  <div class="viewer" id="img2"></div>
 </div>
 
 <div class="box">
-<strong>Lottery Result – 31 January 2026</strong>
-<a href="old/2026-01-31-1pm.pdf" target="_blank">1 PM Result PDF</a>
-<a href="old/2026-01-31-6pm.pdf" target="_blank">6 PM Result PDF</a>
-<a href="old/2026-01-31-8pm.pdf" target="_blank">8 PM Result PDF</a>
-</div>
-
-<!-- MIDDLE AD -->
-<div class="ad">
-<!-- AdSense Code Here -->
+  <strong>8 PM Old Lottery Result</strong>
+  <button onclick="showImage('img3','old/8pm.jpg')">View 8 PM Result</button>
+  <div class="viewer" id="img3"></div>
 </div>
 
 <div class="footer">
-<p>This is not an official lottery website.</p>
-</div>
-
-<!-- BOTTOM AD -->
-<div class="ad">
-<!-- AdSense Code Here -->
+This is not an official lottery website.
 </div>
 
 </div>
+
+<script>
+function showImage(id, file){
+  document.querySelectorAll('.viewer').forEach(v => v.style.display = 'none');
+  const box = document.getElementById(id);
+  box.innerHTML = '<img src="'+file+'" alt="Old Lottery Result Image">';
+  box.style.display = 'block';
+}
+
+/* AUTO YESTERDAY DATE */
+const d = new Date();
+d.setDate(d.getDate() - 1);
+
+const options = { day:'numeric', month:'long', year:'numeric' };
+document.getElementById("oldDate").innerText =
+  "Previous Day Lottery Result – " +
+  d.toLocaleDateString('en-IN', options);
+</script>
 
 </body>
 </html>
